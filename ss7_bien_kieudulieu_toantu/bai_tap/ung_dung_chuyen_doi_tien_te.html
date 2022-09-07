@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen tien</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th for="Amount">Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="Amount"></td>
+        <th>
+            <select id="From">
+                <option value="VietNam">VietNam</option>
+                <option value="USD">USD</option>
+            </select>
+        </th>
+        <td>
+            <select id="To">
+                <option  value="USD">USD</option>
+                <option value="VietNam">VietNam</option>
+
+            </select>
+        </td>
+        <td  ><button onclick="chuyentien()" bgcolor="#483d8b"  ><b>Convert</b></button></td>
+    </tr>
+</table>
+
+<br>
+<p id="Result" style="color:blue"></p>
+</body>
+</html>
+
+<script >
+    function chuyentien() {
+        let Amount = document.getElementById("Amount").value;
+        let FromC = document.getElementById("From").value;
+        let To = document.getElementById("To").value;
+        let Result;
+
+
+        if (FromC == "USD" && To == "VietNam") {
+            Result = "Result: " + (Amount * 23000) + " Đ";
+        }
+        else if (FromC == "VietNam"&& To =="USD"){
+            Result = "Result: "+ (Amount / 23000) + " $";
+        }
+        else if (FromC == "VietNam") {
+            Result = "Result: " + Amount + " Đ"
+        } else {
+            Result = "Result: " + Amount + " $"
+        }
+
+        document.getElementById("Result").innerHTML = Result;
+    }
+
+</script>
