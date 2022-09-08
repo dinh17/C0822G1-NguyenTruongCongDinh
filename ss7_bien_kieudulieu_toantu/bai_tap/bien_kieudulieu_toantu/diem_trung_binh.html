@@ -7,15 +7,16 @@
 <body>
 <script>
 
-    nhapdiemsinh = prompt("nhap diem sinh");
-    nhapdiemhoa =prompt ("nhap diem hoa");
-    nhapdiemly = prompt("nhap diem ly");
-    let diemsinh = parseInt(nhapdiemsinh) ;
-    let diemhoa=parseInt(nhapdiemhoa);
-    let diemly=parseInt(nhapdiemly);
-    let tb = (diemsinh+diemhoa+diemly)/3
+    let nhapDiemSinh = +prompt("nhap diem sinh");
+    let nhapDiemHoa =+prompt ("nhap diem hoa");
+    let nhapDiemLy = +prompt("nhap diem ly");
+    // let dieminh = parseInt(nhapdiemsinh) ;
+    // let diemhoa=parseInt(nhapdiemhoa);
+    // let diemly=parseInt(nhapdiemly);
+    let tb = (nhapDiemSinh+nhapDiemHoa+nhapDiemLy)/3
     document.write("diem trung binh: "+tb)
 
 </script>
 </body>
+
 </html>
