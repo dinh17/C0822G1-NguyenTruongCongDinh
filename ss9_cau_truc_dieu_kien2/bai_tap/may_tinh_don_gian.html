@@ -6,20 +6,17 @@
     <style>
         table {
             border-collapse: collapse
-
         }
         button {
             width: 100%;
         }
 
 
-
-
     </style>
 </head>
 <body>
 <table border="1"   style="color:blue">
-    <tr style="text-align: right" width="50" height="50">
+    <tr style="text-align: right" width="50" height="50" id="view">
         <td colspan="4">
 
         </td>
@@ -27,77 +24,137 @@
     </tr>
     <tr style="text-align:center" >
         <td >
-            <button type="button" value="1">1</button>
+            <button type="button" value="1" onclick="inputValue(this.value)">1</button>
         </td >
         <td >
-            <button type="button" value="2">2</button>
+            <button type="button" value="2" onclick="inputValue(this.value)">2</button>
         </td>
         <td >
-            <button type="button" value="3">3</button>
+            <button type="button" value="3" onclick="inputValue(this.value)">3</button>
         </td>
         <td>
-            <button onclick = "phepCong() " > +</button>
+            <button type=button" value="3"  onclick="inputValue(this.value)"> +</button>
         </td>
     </tr>
     <tr style="text-align:center">
         <td >
-            <button type="button" value="4">4</button>
+            <button type="button" value="4" onclick="inputValue(this.value)">4</button>
         </td>
         <td >
-            <button type="button" value="5">5</button>
+            <button type="button" value="5" onclick="inputValue(this.value)">5</button>
         </td>
         <td >
-            <button type="button" value="6">6</button>
+            <button type="button" value="6" onclick="inputValue(this.value)">6</button>
         </td>
         <td >
-            <button onclick="phepTru()">-</button>
+            <button type="button" value="-" onclick="inputValue(this.value)">-</button>
         </td>
     </tr>
     <tr style="text-align:center">
         <td >
-            <button type="button" value="7">7</button>
+            <button type="button" value="7" onclick="inputValue(this.value)">7</button>
         </td>
         <td >
-            <button type="button" value="8">8</button>
+            <button type="button" value="8" onclick="inputValue(this.value)">8</button>
         </td>
         <td >
-            <button type="button" value="9">9   </button>
+            <button type="button" value="9" onclick="inputValue(this.value)">9   </button>
         </td>
         <td w>
-            <button onclick =" phepNhan()">x</button>
+            <button type="button" onclick="inputValue(this.value)">x</button>
         </td>
     </tr>
     <tr style="text-align:center" >
         <td >
-            <button type="button" value="C">C</button>
+            <button type="button" value="C" onclick="xoa()" >C</button>
         </td>
         <td >
-            <button type="button" value="0">0</button>
+            <button type="button" value="0" onclick="inputValue(this.value)" >0</button>
         </td>
         <td >
-            <button onclick = "bang">=</button>
+            <button type="button" onclick = "bang()">=</button>
         </td>
        <td >
-           <button onclick ="phepChia">/</button>
+           <button type="button" onclick="inputValue(this.value)">/</button>
        </td>
     </tr>
 </table>
 </body>
 </html>
 <script>
-function phepCong(){
-
-}
-function phepNhan(){
-
-}
-function  phepChia(){
-
-}
-function phepTru(){
-
+    let view = document.getElementById("view");
+function inputValue(value){
+        view.value += value ;
 }
 function bang(){
+       let result= eval(view.value);
+             view.value = result;
+}
+function xoa(){
+    view.value = "";
 
 }
+
+
 </script>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Document</title>-->
+<!--    <style>-->
+<!--        button {-->
+<!--            width: 100%;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<input type="text" id="view"><br><br>-->
+<!--&lt;!&ndash;<div class="thang">&ndash;&gt;-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td><button type="button" name="btn" value ="1" onclick="inputValue(this.value)"> 1 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="2" onclick="inputValue(this.value)"> 2 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 3 </button></td>-->
+<!--            <td><button type="button" name="op" value ="+"onclick="inputValue(this.value)"> + </button></td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <td><button type="button" name="btn" value ="4" onclick="inputValue(this.value)"> 4 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="5" onclick="inputValue(this.value)"> 5 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="6" onclick="inputValue(this.value)"> 6 </button></td>-->
+<!--            <td><button type="button" name="op" value ="-" onclick="inputValue(this.value)"> - </button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><button type="button" name="btn" value ="7" onclick="inputValue(this.value)"> 7 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="8" onclick="inputValue(this.value)"> 8 </button></td>-->
+<!--            <td><button type="button" name="btn" value ="9" onclick="inputValue(this.value)"> 9</button></td>-->
+<!--            <td><button type="button" name="op" value ="*" onclick="inputValue(this.value)"> * </button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><button type="button" onclick="xoa();"> AC </button></td>-->
+<!--            <td><button type="button" name="btn" onclick="inputValue(this.value)"> 0 </button></td>-->
+<!--            <td><button  name= "reusult" onclick="result();"> = </button></td>-->
+<!--            <td><button type="button" name="op" value ="/" onclick="inputValue(this.value)"> / </button></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<script >-->
+<!--    let view = document.getElementById("view");-->
+<!--    function inputValue(value) {-->
+<!--        view.value += value;-->
+<!--    }-->
+<!--    function result() {-->
+<!--        let result = eval(view.value);-->
+<!--        view.value = result;-->
+<!--    }-->
+<!--    function xoa() {-->
+<!--        view.value="";-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
