@@ -10,23 +10,19 @@
 </html>
 <script>
     let value = prompt('Nhap ten?', '');
-    if(value=="Admin") {
-        let password =prompt("Nhap mat khau")
-         if(password=="TheMaster"){
-             alert("Welcome");
-         }
-          else if(password="null"){
-              alert("Canceled")
-         }
-          else {
-              alert("wrong password")
-         }
-    }
-    else if (value=="null") {
+    if (value == "Admin") {
+        let password = prompt("Nhap mat khau")
+        if (password == "TheMaster") {
+            alert("Welcome");
+        } else if (password = "null") {
+            alert("Canceled")
+        } else {
+            alert("wrong password")
+        }
+    } else if (value == "null") {
         alert("canceld")
 
-    }
-    else {
+    } else {
         alert("i don't know you")
     }
 </script>

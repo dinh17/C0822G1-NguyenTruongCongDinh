@@ -7,27 +7,27 @@
 <body>
 <table>
     <tr>
-        <td colspan="2" >
-            <input tyle="number" name="A" placeholder="nhap so thu nhat" id="number1">
+        <td colspan="2">
+            <input tyle="number" name="number1" placeholder="nhap so thu nhat" id="number1">
         </td>
         <td colspan="2">
-            <input tyle ="number" name="B" placeholder="nhap so thu hai" id="number2">
+            <input tyle="number" name="number2" placeholder="nhap so thu hai" id="number2">
         </td>
     </tr>
     <tr>
         <td>
-                 <button onclick="phepcong()" id="Addition">Addition(+)</button>
+            <button onclick="phepCong()" id="Addition">Addition(+)</button>
         </td>
         <td>
-            <button onclick="pheptru()" id="Subtraction">Subtraction(-)</button>
+            <button onclick="phepTru()" id="Subtraction">Subtraction(-)</button>
         </td>
         <td>
-            <button onclick="phepnhan()" id="Multiplication">
+            <button onclick="phepNhan()" id="Multiplication">
                 Multiplication(X)
             </button>
         </td>
         <td>
-            <button onclick="phepchia()" id="Division" >
+            <button onclick="phepChia()" id="Division">
 
                 Division(/)
             </button>
@@ -36,42 +36,41 @@
 
 </table>
 <br>
-<p id="Result" style="color:blue"></p>
+<p id="result" style="color:blue"></p>
 </body>
 </html>
 <script>
-function phepchia()
-{
+    function phepChia() {
 
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let result = "result Devision : " + number1 / number2;
+        document.getElementById("result").innerHTML = result;
 
-     let number2 = document.getElementById("number2").value;
-     let Result = "Result Devision : "+ number1/number2;
-     document.getElementById("Result").innerHTML=Result;
+    }
 
-}
-function phepnhan()
-{
-    let number1 = document.getElementById("number1").value;
-    let number2 = document.getElementById("number2").value;
-    let Result = "Result Multiplication : "+ number1*number2;
-    document.getElementById("Result").innerHTML=Result;
+    function phepNhan() {
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let result = "result Multiplication : " + number1 * number2;
+        document.getElementById("result").innerHTML = result;
 
-}
-function pheptru()
-{
-    let number1 = document.getElementById("number1").value;
-    let number2 = document.getElementById("number2").value;
-    let Result = "Result Subtraction : "+ Number(number1-number2);
-    document.getElementById("Result").innerHTML= Result;
+    }
 
-}
-function phepcong()
-{
-    let number1 = document.getElementById("number1").value;
-    let number2 = document.getElementById("number2").value;
-    let Result = "Result Addition: "+Number(Number(number1)+Number(number2)) ;
-    document.getElementById("Result").innerHTML= Result;
+    function phepTru() {
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let result = "result Subtraction : " + Number(number1 - number2);
+        document.getElementById("result").innerHTML = result;
 
-}
+    }
+
+    function phepCong() {
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let result = "result Addition: " + Number(Number(number1) + Number(number2));
+        document.getElementById("result").innerHTML = result;
+
+    }
 
 </script>

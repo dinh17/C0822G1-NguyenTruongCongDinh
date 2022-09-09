@@ -7,56 +7,56 @@
 <body>
 <table>
     <tr>
-        <th for="Amount">Amount</th>
+        <th for="amount">Amount</th>
         <th>From Currency</th>
         <th>To Currency</th>
         <th></th>
     </tr>
     <tr>
-        <td><input type="text" id="Amount"></td>
+        <td><input type="text" id="amount"></td>
         <th>
-            <select id="From">
+            <select id="from">
                 <option value="VietNam">VietNam</option>
                 <option value="USD">USD</option>
             </select>
         </th>
         <td>
-            <select id="To">
-                <option  value="USD">USD</option>
+            <select id="to">
+                <option value="USD">USD</option>
                 <option value="VietNam">VietNam</option>
 
             </select>
         </td>
-        <td  ><button onclick="chuyentien()" bgcolor="#483d8b"  ><b>Convert</b></button></td>
+        <td>
+            <button onclick="chuyentien()" bgcolor="#483d8b"><b>Convert</b></button>
+        </td>
     </tr>
 </table>
 
 <br>
-<p id="Result" style="color:blue"></p>
+<p id="result" style="color:blue"></p>
 </body>
 </html>
 
-<script >
+<script>
     function chuyentien() {
-        let Amount = document.getElementById("Amount").value;
-        let FromC = document.getElementById("From").value;
-        let To = document.getElementById("To").value;
-        let Result;
+        let amount = document.getElementById("amount").value;
+        let fromc = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let result;
 
 
-        if (FromC == "USD" && To == "VietNam") {
-            Result = "Result: " + (Amount * 23000) + " Đ";
-        }
-        else if (FromC == "VietNam"&& To =="USD"){
-            Result = "Result: "+ (Amount / 23000) + " $";
-        }
-        else if (FromC == "VietNam") {
-            Result = "Result: " + Amount + " Đ"
+        if (fromc == "USD" && to == "VietNam") {
+            result = "result: " + (amount * 23000) + " Đ";
+        } else if (fromc == "VietNam" && to == "USD") {
+            result = "result: " + (amount / 23000) + " $";
+        } else if (fromc == "VietNam") {
+            result = "result: " + amount + " Đ"
         } else {
-            Result = "Result: " + Amount + " $"
+            result = "result: " + amount + " $"
         }
 
-        document.getElementById("Result").innerHTML = Result;
+        document.getElementById("result").innerHTML = result;
     }
 
 </script>

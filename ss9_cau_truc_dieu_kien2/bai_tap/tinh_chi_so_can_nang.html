@@ -11,24 +11,24 @@
 </body>
 </html>
 <script>
-     let chieucao = prompt("nhap chieu cao");
-     let cannang = prompt ("nhap can nang");
-     // let h = parseInt(chieucao);
-     // let cn = parseInt(cannang);
-     let bmi = (cannang/(chieucao*chieucao))
-    document.write ("chi so BMI :"+bmi)
+    let chieucao = prompt("nhap chieu cao");
+    let cannang = prompt("nhap can nang");
+    // let h = parseInt(chieucao);
+    // let cn = parseInt(cannang);
+    let bmi = (cannang / (chieucao * chieucao))
+    document.write("chi so BMI :" + bmi)
 
-    function interpretation()
-    {
+    function interpretation() {
 
     }
-     if (bmi < 18)
-         document.write("Underweight");
-     else if (bmi < 25.0)
-         document.write("Normal");
-     else if (bmi < 30.0)
-         document.write("Overweight");
-     else
-         document.write("Obese");
+
+    if (bmi < 18)
+        document.write("Underweight");
+    else if (bmi < 25.0)
+        document.write("Normal");
+    else if (bmi < 30.0)
+        document.write("Overweight");
+    else
+        document.write("Obese");
 
 </script>

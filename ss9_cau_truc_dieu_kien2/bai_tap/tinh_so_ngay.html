@@ -6,49 +6,49 @@
 </head>
 <body>
 
-    <input type="number" min="1" max="12" id="thang" placeholder="Nhập tháng" style="width:10%">
-    <button onclick="check_month()">Tính số ngày</button>
+<input type="number" min="1" max="12" id="thang" placeholder="Nhập tháng" style="width:10%">
+<button onclick="check_month()">Tính số ngày</button>
 
-    <p id="result">ket qua </p>
+<p id="result">ket qua </p>
 
 </body>
 
 </html>
 <script>
-function check_month() {
-    // let number1 = document.getElementById("number1").value;
-    let thang = +document.getElementById("thang").value;
-    switch (thang) {
-        case 1 :
+    function check_month() {
+        // let number1 = document.getElementById("number1").value;
+        let thang = +document.getElementById("thang").value;
+        switch (thang) {
+            case 1 :
 
-        case 3  :
-        case 5  :
-        case 7  :
-        case 8  :
-        case 10 :
-        case 12 :
+            case 3  :
+            case 5  :
+            case 7  :
+            case 8  :
+            case 10 :
+            case 12 :
 
 
-            document.getElementById("result").innerHTML = "Tháng " + thang + " có 31 ngày"
-            break;
-        case 2:
-            document.getElementById("result").innerHTML = "Tháng " + thang + " có 28 hoặc 29 ngày"
-            break;
+                document.getElementById("result").innerHTML = "Tháng " + thang + " có 31 ngày"
+                break;
+            case 2:
+                document.getElementById("result").innerHTML = "Tháng " + thang + " có 28 hoặc 29 ngày"
+                break;
 
-        case 4 :
-        case 6 :
-        case 9:
-        case 11:
-            document.getElementById("result").innerHTML = "Tháng " + thang + " có 30 ngày"
+            case 4 :
+            case 6 :
+            case 9:
+            case 11:
+                document.getElementById("result").innerHTML = "Tháng " + thang + " có 30 ngày"
 
-            break;
-        default:
-            document.getElementById("result").innerHTML = "Vui lòng nhập lại tháng"
+                break;
+            default:
+                document.getElementById("result").innerHTML = "Vui lòng nhập lại tháng"
+
+        }
+
 
     }
-
-
-}
 
 
 </script>
