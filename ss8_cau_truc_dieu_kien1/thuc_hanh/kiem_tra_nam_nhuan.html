@@ -10,19 +10,27 @@
 </html>
 <script>
     let year = parseInt(prompt("nhap nam"));
-    if (year % 4 == 0) {
-        if (year % 100 == 0) {
-            if (year % 400 == 0) {
-                alert(year + "la nam nhuan");
-            } else {
-                alert(year + "khong phai");
+    // if (year % 4 == 0) {
+    //     if (year % 100 == 0) {
+    //         if (year % 400 == 0) {
+    //             alert(year + "la nam nhuan");
+    //         } else {
+    //             alert(year + "khong phai");
+    //
+    //         }
+    //     } else {
+    //         alert(year + " la nam nhuan");
+    //     }
+    // } else {
+    //     alert(year + "khong phai");
+    // }
 
-            }
-        } else {
-            alert(year + " la nam nhuan");
-        }
-    } else {
-        alert(year + "khong phai");
+    if(year%4==0&&year%100!=0||year%400==0){
+        alert(" phai")
+
+    }else {
+       alert("khongphai")
+
     }
     // let year = parseInt(prompt("Enter a year"));
     // if (year % 4 == 0) {
