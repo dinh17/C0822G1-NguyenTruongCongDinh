@@ -15,13 +15,10 @@
     </style>
 </head>
 <body>
+<input type="text" id="view"><br><br>
+
 <table border="1"   style="color:blue">
-    <tr style="text-align: right" width="50" height="50" id="view">
-        <td colspan="4">
 
-        </td>
-
-    </tr>
     <tr style="text-align:center" >
         <td >
             <button type="button" value="1" onclick="inputValue(this.value)">1</button>
@@ -33,7 +30,7 @@
             <button type="button" value="3" onclick="inputValue(this.value)">3</button>
         </td>
         <td>
-            <button type=button" value="3"  onclick="inputValue(this.value)"> +</button>
+            <button type=button" value="+"  onclick="inputValue(this.value)"> +</button>
         </td>
     </tr>
     <tr style="text-align:center">
@@ -58,10 +55,10 @@
             <button type="button" value="8" onclick="inputValue(this.value)">8</button>
         </td>
         <td >
-            <button type="button" value="9" onclick="inputValue(this.value)">9   </button>
+            <button type="button" value="9" onclick="inputValue(this.value)">9 </button>
         </td>
         <td w>
-            <button type="button" onclick="inputValue(this.value)">x</button>
+            <button type="button" value="*"onclick="inputValue(this.value)">x</button>
         </td>
     </tr>
     <tr style="text-align:center" >
@@ -75,7 +72,7 @@
             <button type="button" onclick = "bang()">=</button>
         </td>
        <td >
-           <button type="button" onclick="inputValue(this.value)">/</button>
+           <button type="button" value="/"onclick="inputValue(this.value)">/</button>
        </td>
     </tr>
 </table>
@@ -137,7 +134,7 @@ function xoa(){
 <!--        <tr>-->
 <!--            <td><button type="button" onclick="xoa();"> AC </button></td>-->
 <!--            <td><button type="button" name="btn" onclick="inputValue(this.value)"> 0 </button></td>-->
-<!--            <td><button  name= "reusult" onclick="result();"> = </button></td>-->
+<!--            <td><button  name= "result" onclick="result();"> = </button></td>-->
 <!--            <td><button type="button" name="op" value ="/" onclick="inputValue(this.value)"> / </button></td>-->
 <!--        </tr>-->
 <!--    </table>-->

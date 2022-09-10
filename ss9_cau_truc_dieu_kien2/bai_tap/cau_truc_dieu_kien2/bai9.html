@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let canhA = +prompt("nhap canh dau tien");
+    let canhB = +prompt("nhap canh thu 2");
+    let canhC = +prompt("nhap canh thu 3");
+    if (canhA > 0 && canhB > 0 && canhC > 0) {
+        if ((canhA + canhB > canhC) && (canhA + canhC > canhB) && (canhB + canhC > canhA)) {
+            alert("la 3 canh cua tam giac");
+        }
+    } else {
+        alert("khong phai la 3 canh cua tam giac");
+    }
+</script>
