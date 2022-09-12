@@ -4,7 +4,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<!--Bậc 1: 4 triệu đồng/tháng 0%;-->
+<!--Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;-->
+<!--Bậc 3: Trên 6 - 9 triệu đồng: 10%;-->
+<!--Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;-->
+<!--Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;-->
+<!--Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;-->
+<!--Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;-->
+<!--Bậc 8: Trên 84 triệu đồng: 35%.-->
 <body>
 
 </body>
 </html>
+<script>
+let thuNhap = +prompt(" muc thu nhap ca nhan ");
+if(thuNhap<=4)
+{
+    alert("muc thu nhap " +thuNhap);
+}
+if(thuNhap<=6){
+    alert("muc thu nhap"+ (thuNhap-(thuNhap*5)/100))
+}
+if(thuNhap<=9){
+    alert("muc thu nhap " +  (thuNhap-(thuNhap*10)/100))
+}
+if(thuNhap<=14){
+    alert("muc thu nhap " +  (thuNhap-(thuNhap*15)/100))
+}
+if(thuNhap<=24){
+    alert("muc thu nhap " +  (thuNhap-(thuNhap*20)/100))
+}
+if(thuNhap<=44){
+    alert("muc thu nhap " +  (thuNhap-(thuNhap*25)/100))
+}
+if(thuNhap<=84){
+    alert("muc thu nhap " +  (thuNhap-(thuNhap*30)/100))
+}
+else {
+    alert("muc thu nhap "+  (thuNhap-(thuNhap*35)/100))
+}
+</script>
