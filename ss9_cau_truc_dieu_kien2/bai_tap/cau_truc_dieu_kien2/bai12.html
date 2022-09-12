@@ -11,5 +11,7 @@
 <script>
     let nhapThang = +prompt("nhap so Thang vay");
     let nhapTien = +prompt("nhap so Tien ");
-    alert("so tien lai : " + (10*Math.pow(+(1+5/100), 10)))
+    const laiSuat = +5/100 ;
+    alert("so tien lai : " + ((nhapTien*Math.pow(+(1+laiSuat),nhapThang))-nhapTien));
+
 </script>
