@@ -13,15 +13,13 @@
     let a = +prompt("nhap so A");
     let b = +prompt("nhap so B");
     let c = +prompt("nhap so C");
-    let denTal = b*b-4*a*c;
-    if(denTal<0){
+    let denTal = b * b - 4 * a * c;
+    if (denTal < 0) {
         alert("phuong trinh vo nghiem");
-    }
-    else if (denTal===0){
-        alert("phuong tỉnh co nghiem kep x1=x2= :" + (-b/2*a));
-    }
-    else {
-        alert("co 2 nghiem phan biet x1 =:"+((-b+Math.sqrt(denTal))/(2*a))+"nghiem x2 =  "+((-b-Math.sqrt(denTal))/(2*a)));
+    } else if (denTal === 0) {
+        alert("phuong tỉnh co nghiem kep x1=x2= :" + (-b / 2 * a));
+    } else {
+        alert("co 2 nghiem phan biet x1 =:" + ((-b + Math.sqrt(denTal)) / (2 * a)) + "nghiem x2 =  " + ((-b - Math.sqrt(denTal)) / (2 * a)));
     }
 
 </script>

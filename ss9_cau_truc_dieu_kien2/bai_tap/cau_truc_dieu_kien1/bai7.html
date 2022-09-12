@@ -17,16 +17,14 @@
     //25000 la cuoc co dinh
     const coDinh = +25000
 
-    let soPhut = +prompt (" nhap so phut goi : ");
+    let soPhut = +prompt(" nhap so phut goi : ");
 
-    if ( soPhut <= 50 ){
-        alert("cuoc dien thoai :  "+(coDinh+soPhut*600) +"Đ");
+    if (soPhut <= 50) {
+        alert("cuoc dien thoai :  " + (coDinh + soPhut * 600) + "Đ");
 
-    }
-    else if(soPhut<=200){
-        alert("cuoc dien thoai : " +(coDinh+50*600+(soPhut-50)*400));
-    }
-    else {
-        alert("cuoc dien thoai  :" +(coDinh+50*600+(soPhut-50)*400+(soPhut-200)*200));
+    } else if (soPhut <= 200) {
+        alert("cuoc dien thoai : " + (coDinh + 50 * 600 + (soPhut - 50) * 400));
+    } else {
+        alert("cuoc dien thoai  :" + (coDinh + 50 * 600 + (soPhut - 50) * 400 + (soPhut - 200) * 200));
     }
 </script>
