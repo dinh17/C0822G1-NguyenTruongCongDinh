@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+        Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và
+        vị trí của phần tử đó.
+    </title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let A = [];
+    let display = "";
+    let local = 0;
+    let max = 0;
+    for (let i = 0; i < 10; i++) {
+        A[i] = +prompt("Nhap phan tu thu " + i + " la");
+        display += A[i] + " ";
+
+    }
+    alert("mang la " + display)
+    for (let i = 0; i < 10; i++) {
+        if (max < A[i]) {
+            max = A[i];
+            local = i;
+        }
+    }
+    alert("gia tri lon nhat la " + max + " vi tri  " + local);
+</script>

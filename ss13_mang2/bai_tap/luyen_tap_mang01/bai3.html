@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.
+        In ra giá trị trung bình của các phần tử trong mảng.</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let A = [];
+    let display = "";
+    let local = 0;
+    let max = 0;
+    let total_average = 0;
+    for (let i = 0; i < 10; i++) {
+        A[i] = +prompt("Nhap phan tu thu " + i + " la");
+        display += A[i] + " ";
+
+    }
+    alert("mang la " + display)
+    for (let i = 0; i < 10; i++) {
+        if (max < A[i]) {
+            max = A[i];
+            local = i;
+        }
+        total_average += A[i];
+    }
+    total_average = total_average/A.length;
+    alert("gia tri lon nhat la " + max + " vi tri  " + local+"gia tri trung binh la  "+total_average);
+</script>

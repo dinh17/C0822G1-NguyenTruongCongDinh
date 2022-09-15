@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập vào 2 chuỗi,
+        sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    </title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let string1 = prompt("enter string 1");
+    let string2 = prompt("enter string 2");
+    let compare = true;
+    document.write("string 1 : " + string1 + " <br>" + "string 2 : " + string2 + " <br>");
+    if (string1.length != string2.length) {
+        document.write("2 string dissimilarity <br>");
+    } else {
+        for (let i = 0; i < string1.length; i++) {
+            for (let j = 0; j < string2.length; j++) {
+                if (string1[i] === string2[j]) {
+                    compare = true;
+                } else {
+                    compare = false;
+                }
+            }
+        }
+        if (compare === false) {
+            document.write("2 string dissimilarity");
+        } else {
+            document.write("2 string are the same ");
+        }
+    }
+</script>
