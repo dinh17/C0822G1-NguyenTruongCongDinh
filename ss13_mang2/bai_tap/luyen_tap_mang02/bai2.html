@@ -12,15 +12,17 @@
 </body>
 </html>
 <script>
-    let x = [-3, 5, "c", "a", "b", 1, 3, 2, 10];
-    let first = 0;
-    let last = x.length - 1;
-    while (first < last) {
-        let b = x[first];
-        x[first] = x[last];
-        x[last] = b;
-        first++;
-        last--;
+    let mang = [1,5,"a","c","d",6,7,"z","w",10,"213"]
+let trunggian
+document.write("Mảng = ["+mang+"]<br>")
+for (let i=0; i<Math.floor((mang.length)/2);i++){
+    for (let j = Math.ceil((mang.length)/2); j<(mang.length);j++){
+        trunggian = mang[i]
+        mang[i] = mang[j]
+        mang[j] = trunggian
     }
-    document.write(x);
+}
+document.write("Mảng đổi chiều = ["+mang+"]")
+
+
 </script>

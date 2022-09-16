@@ -12,21 +12,21 @@
 </body>
 <script>
 
-    let A = [];
+    let array = [];
     let display = "";
     let local = 0;
     let max = 0;
     for (let i = 0; i < 10; i++) {
-        A[i] = +prompt("Nhap phan tu thu " + i + " la");
-        display += A[i] + " ";
+        array[i] = +prompt("Nhap phan tu thu " + i + " la");
+        display += array[i] + " ";
 
     }
-    alert("mang la " + display)
+    // alert("mang la " + display)
     for (let i = 0; i < 10; i++) {
-        if (max < A[i]) {
-            max = A[i];
+        if (max < array[i]) {
+            max = array[i];
             local = i;
         }
     }
-    alert("gia tri lon nhat la " + max + " vi tri  " + local);
+    alert("gia tri lon nhat la " + max + " vi tri  " + local+"mang la " + display);
 </script>
