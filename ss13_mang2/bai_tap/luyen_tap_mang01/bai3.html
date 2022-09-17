@@ -14,7 +14,7 @@
 
     let local = 0;
     let max = 0;
-    let total_average = 0;
+    let totalAverage = 0;
     for (let i = 0; i < 10; i++) {
         array[i] = +prompt("Nhap phan tu thu " + i + " la");
     }
@@ -24,8 +24,8 @@
             max = array[i];
             local = i;
         }
-        total_average += array[i];
+        totalAverage += array[i];
     }
-    total_average = total_average / array.length;
-    alert("gia tri lon nhat la " + max + " vi tri  " + local + "gia tri trung binh la  " + total_average);
+    totalAverage = totalAverage / array.length;
+    alert("gia tri lon nhat la " + max + " vi tri  " + local + "gia tri trung binh la  " + totalAverage);
 </script>

@@ -9,24 +9,24 @@
 </body>
 </html>
 <script>
-    let str = prompt("nhap vao mot chuoi ten ");
-    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let string = prompt("nhap vao mot chuoi ten ");
+    let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lower = 'abcdefghijklmnopqrstuvwxyz';
     let  result = [];
 
-    for(var x=0; x<str.length; x++)
+    for(var x=0; x<string.length; x++)
     {
-        if(UPPER.indexOf(str[x]) !== -1)
+        if(upper.indexOf(string[x]) !== -1)
         {
-            result.push(str[x].toLowerCase());
+            result.push(string[x].tolowerCase());
         }
-        else if(LOWER.indexOf(str[x]) !== -1)
+        else if(lower.indexOf(string[x]) !== -1)
         {
-            result.push(str[x].toUpperCase());
+            result.push(string[x].toupperCase());
         }
         else
         {
-            result.push(str[x]);
+            result.push(string[x]);
         }
     }
     alert(result.join(''));

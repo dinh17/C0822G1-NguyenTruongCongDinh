@@ -9,19 +9,19 @@
 </body>
 </html>
 <script>
-    let num= prompt("Nhap vao mot chuoi");
-    let str = num.toString();
-    let result = [str[0]];
+    let number= prompt("Nhap vao mot chuoi");
+    let string = number.toString();
+    let result = [string[0]];
 
-    for(let x=1; x<str.length; x++)
+    for(let x=1; x<string.length; x++)
     {
-        if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+        if((string[x-1]%2 === 0)&&(string[x]%2 === 0))
         {
-            result.push('-', str[x]);
+            result.push('-', string[x]);
         }
         else
         {
-            result.push(str[x]);
+            result.push(string[x]);
         }
     }
     alert(result.join(''));

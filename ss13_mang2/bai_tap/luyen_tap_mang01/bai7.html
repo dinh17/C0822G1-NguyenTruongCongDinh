@@ -15,21 +15,21 @@
 <script>
     let array = [];
     let boo = true;
-    let arraynew = [];
+    let arrayNew = [];
 
     for (let i = 0; i < 10; i++) {
         array[i] = prompt("Nhập số vào mảng");
-        if (array[i] == "V") {
+        if (array[i] === "V") {
             boo = false;
         }
 
-        if (array[i] != "V") {
-            arraynew.push(array[i]);
+        if (array[i] !== "V") {
+            arrayNew.push(array[i]);
         }
     }
     document.write("array = [" + array + "]<br>");
-    if (boo == false) {
-        document.write("Đã xóa phần tử V. array = [" + arraynew + "]<br>");
+    if (boo === false) {
+        document.write("Đã xóa phần tử V. array = [" + arrayNew + "]<br>");
     }
 
 
