@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function compareThreeNumber(){
+        if(number1<number2 && number1<number3){
+            return number1 ;
+        }else if (number2<number3){
+            return number2;
+        }else{
+            return number3;
+        }
+    }
+    let number1 = +prompt("enter number 1 ");
+    let number2 = +prompt("enter number 2");
+    let number3 = +prompt("enter number 3");
+    alert(compareThreeNumber()+"la so nho nhat ");
+</script>
