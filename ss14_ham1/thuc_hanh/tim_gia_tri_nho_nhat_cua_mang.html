@@ -10,19 +10,20 @@
 </html>
 <script>
     function minArray(arr) {
-        if(arr.length === 0)
+        if (arr.length === 0)
             return -1;
         let min = arr[0];
-        let local ;
+        let local;
 
-        for(let i = 1; i < arr.length; i++){
-            if(arr[i] < min){
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i];
-                local=i;
+                local = i;
             }
         }
         return local;
     }
+
     let arr1 = [1, 2, 8, 0, 9];
     let min = minArray(arr1);
     alert(min);

@@ -9,29 +9,34 @@
 </body>
 </html>
 <script>
-    function isPrime(){
+    function isPrime(number){
         let count=0;
-        let countPrime=0;
-        for ( let i=2;i<1000;i++){
-            if(countPrime<number){
-                for(let j=1;j<=i;j++){
-                    if(i%j===0){
-                        count++;
-                    }
-                }
-                if(count===2){
-                    document.write(i+"<br>")
-                    countPrime++;
-                }
-                count=0;
-            }
-            else{
-                break;
-            }
-        }
-
+     for (let i  =1 ; i<=number ;i ++){
+         if (number%i===0){
+             count++;
+         }
+     }
+     if(count===2){
+         return true;
+     }else{
+         return false;
+     }
     }
-    let number = +prompt("nhap");
-    isPrime(number);
+    // for(let i=2;i<1000;i++){
+    //     if(isPrime(i)===true){
+    //         document.write(i+"<br>");
+    //     }
+    // }
 
+    // alert(isPrime(2))
+    let countSnt=0;
+    let i = 2;
+    while (countSnt<1000){
+
+        if (isPrime(i)===true){
+            document.write(i+"<br>");
+            countSnt += 1 ;
+        }
+        i++;
+    }
 </script>

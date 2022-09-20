@@ -1,156 +1,65 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<form>-->
-<!--    <h1><b>Add New Product</b></h1>-->
-<!--    <input type="text" placeholder="New product" id="newProduct"><span ><input type="button" id="them" value="ADD" onclick=""></span>-->
-<!--    <h1><b>Display All Product</b></h1>-->
-<!--    <table>-->
-<!--        <tr>-->
-<!--            -->
-<!--        </tr>-->
-<!--    </table>-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h2>Các sản phẩm: </h2>-->
-<!--<p id="ds"><br></p>-->
-<!--<button type="button" onclick="add(matHang)">Thêm</button>-->
-<!--<button type="button" onclick="edit(matHang)">Sửa</button>-->
-<!--<button type="button" onclick="xoa(matHang)">Xóa</button>-->
-
-<!--<script>-->
-<!--    var matHang = ['Sữa', 'Đường', 'Bánh', 'Kem', 'Kẹo'];-->
-<!--    function hienThi(matHang) {-->
-<!--        var s="";-->
-<!--        for (var i=0;i<matHang.length;i++){-->
-<!--            s=s+(i+1)+". "+matHang[i]+"<br>";-->
-<!--        }-->
-<!--        return s;-->
-<!--    }-->
-
-<!--    function add(matHang) {-->
-<!--        var newMatHang = prompt("Nhập mặt hàng muốn thêm: ");-->
-<!--        matHang.push(newMatHang);-->
-<!--        document.getElementById("ds").innerHTML = hienThi(matHang);-->
-<!--    }-->
-
-<!--    function edit(matHang) {-->
-<!--        var index = prompt("Nhập số thứ tự muốn sửa: ");-->
-<!--        var newMatHang = prompt("Nhập tên mặt hàng thay thế: ");-->
-<!--        matHang[index-1] = newMatHang;-->
-<!--        document.getElementById("ds").innerHTML = hienThi(matHang);-->
-<!--    }-->
-
-<!--    function xoa(matHang) {-->
-<!--        var index = prompt("Nhập số thứ tự muốn xóa: ");-->
-<!--        matHang.splice(index-1,1);-->
-<!--        document.getElementById("ds").innerHTML = hienThi(matHang);-->
-<!--    }-->
-<!--    document.getElementById("ds").innerHTML = hienThi(matHang);-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <title>Title</title>
 </head>
 <body>
-<form action="javascript:void(0);" method="POST" onsubmit="listPhone.add()">
-    <input type="text" id="add" placeholder="Thêm sản phẩm">
-    <input type="submit" value="Thêm" >
-</form>
-
-<br><br>
-
-<table border="1px" cellpadding="0" cellspacing="0" width="600" style="text-align: center; ">
-    <tr>
-        <th style="padding: 10px 0;">Tổng các sản phẩm</th>
-        <th colspan="2" style="padding: 10px 0;"><p id="soluong"></p></th>
-    </tr>
-    <tbody id="product"></tbody>
-</table>
-
-<br><br>
-
-<form action="javascript:void(0);" method="POST" id="saveEdit" >
-    <input type="text" id="edit">
-    <input type="submit" value="Edit" />
-</form>
-
-
-
+<input type="text" id="nhap" placeholder="Nhập tên sản phẩm">
+<button onclick="themMoi()">Thêm mới sản phẩm</button>
+<br>
+<span>Số lượng sản phẩm </span> <span id="soLuong"></span>
+<p id="display"></p>
 <script>
-    let Phone = function(){
-        this.listPhone = ["Nokia","Iphone","Samsung","LG"]
-        this.product = document.getElementById("product")
+    let danhSachSanPham = ["iphone", "Nokia", "samSung"];
+    hienThi();
 
-        this.count = function (data) {
-            let soluong = document.getElementById("soluong")
-            if (data != null){
-                if (data>0){
-                    soluong.innerHTML = "Có "+data+" sản phẩm"
-                } else{
-                    soluong.innerHTML = "Ko có sản phẩm"
-                }
-            }
+    function themMoi() {
+        let sanPham = document.getElementById("nhap").value;
+        if (sanPham != "") {
+            danhSachSanPham.push(sanPham);
+        } else {
+            alert("vui lòng điền tên sản phẩm");
         }
-
-        this.display = function () {
-            let data = ""
-            if(this.listPhone.length>0){
-                for (let i=0; i<this.listPhone.length; i++){
-                    data+= "<tr>"
-                    data+= "<td style='padding: 10px 0; font-size: 20px;font-weight: bold ;text-transform:uppercase;color: red'>"+this.listPhone[i]+"</td>"
-                    data+= "<td style='padding: 10px 0;'><button onclick='listPhone.edit("+i+")'>Edit</button></td>"
-                    data+= "<td style='padding: 10px 0;'><button onclick='listPhone.delete("+i+")'>Delete</button></td>"
-                    data+= "</tr>"
-                }
-            }
-            this.count(this.listPhone.length)
-            return this.product.innerHTML = data
-        }
-
-        this.add = function () {
-            let addProduct = document.getElementById("add").value
-            this.listPhone.push(addProduct.trim())
-            this.display()
-            document.getElementById("add").value = ""
-        }
-
-        this.edit = function (id) {
-            let editProduct = document.getElementById("edit")
-            editProduct.value = this.listPhone[id]
-            self = this;
-            document.getElementById("saveEdit").onsubmit = function () {
-                let produc = editProduct.value
-                self.listPhone.splice(id, 1, produc)
-                self.display()
-                editProduct.value = ""
-            }
-        }
-
-        this.delete = function (id) {
-            this.listPhone.splice(id, 1);
-            this.display()
-        }
+        document.getElementById("nhap").value = "";
+        hienThi();
     }
 
-    let listPhone = new Phone()
-    listPhone.display()
+    function hienThi() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSachSanPham.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSachSanPham[i] + '</td>\n' +
+                '        <td><input type="button" onclick="suaSanPham(' + i + ')" value="edit"></td>\n' +
+                '        <td><input type="button" onclick="xoaSanPham(' + i + ')" value="delete"></td>\n' +
+                '    </tr>'
+        }
+
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+        document.getElementById("soLuong").innerHTML = danhSachSanPham.length;
+    }
+hienThi()
+    function xoaSanPham(index) {
+        let xacNhanXoa = confirm("bạn có muốn xoá sản phẩm : " + danhSachSanPham[index]);
+        if (xacNhanXoa) {
+            danhSachSanPham.splice(index, 1);
+        }
+        hienThi();
+    }
+
+    function suaSanPham(index) {
+        let sanPhamMoi = prompt("nhập lại tên sản phẩm ", danhSachSanPham[index]);
+        danhSachSanPham[index] = sanPhamMoi;
+        hienThi();
+    }
 </script>
 </body>
 </html>

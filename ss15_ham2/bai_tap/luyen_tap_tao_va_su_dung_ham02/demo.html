@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    // function checkSquare(n) {
+    //     let i = 1;
+    //     while (i <= n) {
+    //         if (i * i == n) {
+    //             return 1;
+    //         }
+    //         i++;
+    //     }
+    // }
+    //
+    // let array = [];
+    // let count = 0;
+    // let n = +prompt("nhap so phan tu trong mang");
+    // for ( let  i = 0 ; i<n;i++){
+    //     array[i]= +prompt("nhap vao phan tu ("+n+" so) ");
+    // }
+    //
+    // document.write("Cac so chinh phuong trong mang: ");
+    // for (let i = 0; i < array.length; ++i) {
+    //     let check = checkSquare(array[i]);
+    //     if (check == 1) {
+    //        document.write(array[i] + " ");
+    //         ++count;
+    //     }
+    // }
+    // document.write("So so chinh phuong trong mang: " + count);
+
+
+    // let  result = [];
+    //
+    // for(var x=0; x<string.length; x++)
+    // {
+    //     if(upper.indexOf(string[x]) !== -1)
+    //     {
+    //         result.push(string[x].tolowerCase());
+    //     }
+    //     else if(lower.indexOf(string[x]) !== -1)
+    //     {
+    //         result.push(string[x].toupperCase());
+    //     }
+    //     else
+    //     {
+    //         result.push(string[x]);
+    //     }
+    // }
+    // alert(result.join(''));
+    let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lower = 'abcdefghijklmnopqrstuvwxyz';
+
+    function checkString(str) {
+
+        let count = 0;
+        let count1 = 0;
+
+        for (var x = 0; x < str.length; x++) {
+            if (upper.indexOf(str[x]) !== -1) {
+                count++;
+            }
+            if (lower.indexOf(str[x]) !== -1) {
+                count1++;
+            }
+        }
+        if (count === count1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let  str = prompt("nhap vao mot chuoi ");
+    alert(checkString(str))
+</script>
