@@ -16,22 +16,26 @@
 </head>
 <body>
 <script>
-    let arrayStar  =  ["Polaris", " Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrayStar  =  ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let arrayStar2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
     let star = prompt("nhap ten ngoi sao");
 
     function checkStar() {
+        let count=0;
+        for (let i = 0; i < arrayStar.length;i++) {
+            if (star === arrayStar[i]) {
+                alert (arrayStar2[i]) ;
+            }else{
+                count++;
+            }
 
-        for (let i = 0; i < arrayStar.length; i++) {
-            if (star == arrayStar[i]) {
-                alert(arrayStar2[i]);
-            } else {
-                alert("No");
+            if(count==arrayStar2.length){
+                alert("khong co");
             }
         }
-    }
 
-    checkStar()
+    }
+    checkStar();
 
 </script>
 
