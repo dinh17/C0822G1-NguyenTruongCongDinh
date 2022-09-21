@@ -10,14 +10,14 @@
 </body>
 </html>
 <script>
-    function chuViHinhTron() {
+    function chuViHinhTron(radius) {
         return 2 * 3.14 * radius;
     }
 
-    function dienTichHinhTron() {
+    function dienTichHinhTron(radius) {
         return radius * radius * 2 * 3.14;
     }
 
     let radius = +prompt("nhap ban kinh");
-    alert(chuViHinhTron() + "dien tich " + dienTichHinhTron());
+    alert(chuViHinhTron(radius) + "dien tich " + dienTichHinhTron(radius));
 </script>

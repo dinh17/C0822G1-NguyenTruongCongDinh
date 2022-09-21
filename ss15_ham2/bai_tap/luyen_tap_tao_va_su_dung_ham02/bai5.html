@@ -9,7 +9,7 @@
 </body>
 </html>
 <script>
-    function compareThreeNumber(){
+    function compareThreeNumber(number1,number2,number3){
         if(number1<number2 && number1<number3){
             return number1 ;
         }else if (number2<number3){
@@ -21,5 +21,5 @@
     let number1 = +prompt("enter number 1 ");
     let number2 = +prompt("enter number 2");
     let number3 = +prompt("enter number 3");
-    alert(compareThreeNumber()+"la so nho nhat ");
+    alert(compareThreeNumber(number1,number2,number3)+"la so nho nhat ");
 </script>

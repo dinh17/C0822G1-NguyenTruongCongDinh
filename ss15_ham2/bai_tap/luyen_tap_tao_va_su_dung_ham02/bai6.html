@@ -10,7 +10,7 @@
 </body>
 </html>
 <script>
-    function checkInteger() {
+    function checkInteger(number) {
         if (number > 0 && number % 1 === 0) {
             return true;
         } else {
@@ -19,5 +19,5 @@
     }
 
     let number = +prompt("nhap vao 1 so ");
-    alert(checkInteger())
+    alert(checkInteger(number))
 </script>
