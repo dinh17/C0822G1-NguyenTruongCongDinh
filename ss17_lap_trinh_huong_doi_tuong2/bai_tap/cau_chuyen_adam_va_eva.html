@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // class Apple {
+    //     constructor(weight){
+    //         this.weight = weight ;
+    //     }
+    //     setWeight(weight) {
+    //         this.weight = weight;
+    //     }
+    //
+    //     }
+    //     decrease(){
+    //         if(this.isEmpty==true){
+    //             alert("tao da het roi ");
+    //         }else{
+    //             this.isEmpty--;
+    //         }
+    //     }
+    //     isEmpty(){
+    //       if (this.weight<=0){
+    //           return true ;
+    //       }else{
+    //           return false ;
+    //       }
+    //     }
+    //     getWeight(){
+    //          return this.weight
+    //     }
+    //
+    // }
+    // class Human {
+    //     constructor(name,gender,weight){
+    //          this.name=name;
+    //          this.gender=gender;
+    //          this.weight=weight;
+    //     }
+    //     Human(){
+    //
+    //     }
+    //     isMale(){
+    //         if(this.gender == 1){
+    //             return true;
+    //         }else {
+    //             return false;
+    //         }
+    //     }
+    //     setGender(){
+    //         this.gender=gender
+    //     }
+    //     getGender(){
+    //         if(this.isMale()){
+    //             return "Male";
+    //         }else {
+    //             return "Female";
+    //         }
+    //
+    //     }
+    //     checkApple(apple){
+    //         return apple.isEmpty();
+    //     }
+    //     eat(apple){
+    //         if(apple.getWeight() > 0){
+    //             apple.decreaseApple();
+    //             this.weight++;
+    //         }else {
+    //             alert("Táo đã hết");
+    //         }
+    //     }
+    //     say(string){
+    //         console.log(string);
+    //     }
+    //     getName(){
+    //        return this.name;
+    //     }
+    //     setName(){
+    //         this.name = name ;
+    //
+    //     }
+    //     getWeight(weight){
+    //         return this.weight;
+    //     }
+    //     setWeight(){
+    //      this.weight= weight;
+    //     }
+    // }
+    class Tao {
+        constructor(trongluong) {
+            this.trongluong = trongluong;
+        }
+
+        get getTrongLuong() {
+            return this.trongluong;
+        }
+    }
+
+    class Nguoi {
+        constructor(ten, gioitinh, can) {
+            this.ten = ten;
+            // this.gioitinh = gioitinh;
+            this.can = can;
+        }
+
+        // get getTen (){
+        //     return this.ten;
+        // }
+        // get getGioiTinh (){
+        //     return this.gioitinh;
+        // }
+        // get getCan(){
+        //     return this.can;
+        // }
+    }
+
+    let tao = new Tao(10);
+    let nguoi1 = new Nguoi("Adam", "Nam", 65);
+    let nguoi2 = new Nguoi("Eva", "Nữ", 50);
+    let a = 1;
+    for (let i = tao.getTrongLuong; i > 0; i--) {
+        if (i % 2 === 0) {
+            document.write(nguoi1.ten + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Adam là " + (nguoi1.can + a) + "<br>");
+        } else {
+            document.write(nguoi2.ten + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Eva là " + (nguoi2.can + --a) + "<br>");
+        }
+        a++;
+    }
+</script>
