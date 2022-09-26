@@ -9,90 +9,8 @@
 </body>
 </html>
 <script>
-    // class Apple {
-    //     constructor(weight){
-    //         this.weight = weight ;
-    //     }
-    //     setWeight(weight) {
-    //         this.weight = weight;
-    //     }
-    //
-    //     }
-    //     decrease(){
-    //         if(this.isEmpty==true){
-    //             alert("tao da het roi ");
-    //         }else{
-    //             this.isEmpty--;
-    //         }
-    //     }
-    //     isEmpty(){
-    //       if (this.weight<=0){
-    //           return true ;
-    //       }else{
-    //           return false ;
-    //       }
-    //     }
-    //     getWeight(){
-    //          return this.weight
-    //     }
-    //
-    // }
-    // class Human {
-    //     constructor(name,gender,weight){
-    //          this.name=name;
-    //          this.gender=gender;
-    //          this.weight=weight;
-    //     }
-    //     Human(){
-    //
-    //     }
-    //     isMale(){
-    //         if(this.gender == 1){
-    //             return true;
-    //         }else {
-    //             return false;
-    //         }
-    //     }
-    //     setGender(){
-    //         this.gender=gender
-    //     }
-    //     getGender(){
-    //         if(this.isMale()){
-    //             return "Male";
-    //         }else {
-    //             return "Female";
-    //         }
-    //
-    //     }
-    //     checkApple(apple){
-    //         return apple.isEmpty();
-    //     }
-    //     eat(apple){
-    //         if(apple.getWeight() > 0){
-    //             apple.decreaseApple();
-    //             this.weight++;
-    //         }else {
-    //             alert("Táo đã hết");
-    //         }
-    //     }
-    //     say(string){
-    //         console.log(string);
-    //     }
-    //     getName(){
-    //        return this.name;
-    //     }
-    //     setName(){
-    //         this.name = name ;
-    //
-    //     }
-    //     getWeight(weight){
-    //         return this.weight;
-    //     }
-    //     setWeight(){
-    //      this.weight= weight;
-    //     }
-    // }
-    class Tao {
+
+    class Apple {
         constructor(trongluong) {
             this.trongluong = trongluong;
         }
@@ -102,34 +20,34 @@
         }
     }
 
-    class Nguoi {
-        constructor(ten, gioitinh, can) {
-            this.ten = ten;
+    class Person {
+        constructor(name, gioitinh, weight) {
+            this.name = name;
             // this.gioitinh = gioitinh;
-            this.can = can;
+            this.weight = weight;
         }
 
-        // get getTen (){
-        //     return this.ten;
+        // get getname (){
+        //     return this.name;
         // }
         // get getGioiTinh (){
         //     return this.gioitinh;
         // }
-        // get getCan(){
-        //     return this.can;
+        // get getheight(){
+        //     return this.height;
         // }
     }
 
-    let tao = new Tao(10);
-    let nguoi1 = new Nguoi("Adam", "Nam", 65);
-    let nguoi2 = new Nguoi("Eva", "Nữ", 50);
-    let a = 1;
-    for (let i = tao.getTrongLuong; i > 0; i--) {
+    let apple = new Apple(10);
+    let Person1 = new Person("Adam", "Nam", 65);
+    let Person2 = new Person("Eva", "Nữ", 50);
+    let tam = 1;
+    for (let i = apple.getTrongLuong; i > 0; i--) {
         if (i % 2 === 0) {
-            document.write(nguoi1.ten + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Adam là " + (nguoi1.can + a) + "<br>");
+            document.write(Person1.name + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Adam là " + (Person1.weight + tam) + "<br>");
         } else {
-            document.write(nguoi2.ten + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Eva là " + (nguoi2.can + --a) + "<br>");
+            document.write(Person2.name + " ăn táo" + "<br>" + "Quả táo còn: " + (i - 1) + "đơn vị" + "<br>" + "Cân nặng của Eva là " + (Person2.weight + --tam) + "<br>");
         }
-        a++;
+        tam++;
     }
 </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+        Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let array = [ "1","2","3","4","5","6","7","8","9","0"];
+    let array1 = ["mot","hai","ba","bon","nam","sau","bay","tam","chin","khong"];
+     let number = prompt("nhap tu ban phim ");
+     // let str = number.toString();
+    // array2=[1,2,3,4];
+
+    // let str = "20210731";
+    // let array2 = str.split('');
+    // array3=[];
+    for(let i = 0 ; i<number.length;i++){
+        for(let j=0;j<array.length;j++)
+        if(number[i]===array[j]){
+            // array3.push(array1[j])
+            document.write(array1[j])
+        }
+    }
+    // document.write(array3.join(''));
+
+
+
+</script>
