@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let nhap = prompt("nhập chuỗi bất kỳ");
+    let mang = nhap.split("");
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = i; j < mang.length; j++) {
+            if (mang[i] === mang[j+1]) {
+                mang.splice(mang[j+1],1);
+                j--;
+            }
+        }
+    }
+    alert("mảng có " + mang.length + " ký tự khác nhau");
+</script>

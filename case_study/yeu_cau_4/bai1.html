@@ -8,3 +8,15 @@
 
 </body>
 </html>
+<script>
+    let nhap = prompt("Nhập 1 chuỗi");
+    let mang = nhap.split(" ");
+    let ketQua = "";
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] !== "") {
+            let chu = mang[i].substr(0, 1).toUpperCase() + mang[i].substr(1).toLowerCase();
+            ketQua += chu + " ";
+        }
+    }
+    alert(ketQua);
+</script>

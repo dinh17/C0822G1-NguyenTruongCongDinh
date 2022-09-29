@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let n = +prompt("nhap vao 1 so bat ky");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhap phan vi tri  arr" + i);
+    }
+    document.write(arr);
+    let compare;
+    for (let i = 2; i < arr.length; i++) {
+        if (arr[i ] === arr[i -1] + arr[i-2]) {
+            compare = true;
+        } else {
+            compare = false;
+        }
+    }
+    if (compare === true) {
+        alert("ok");
+    } else {
+        alert("no");
+    }
+    // let F = 0;
+    // let F0 = 1;
+    // let F1 = 0;
+    // let fibonacci =[];
+    //
+    // for (let i = 0; i <arr.length; i++) {
+    //
+    //     F = F1 + F0;
+    //     F0 = F1;
+    //     F1 = F;
+    //     fibonacci.push(F);
+    //
+    //
+    // }
+    // document.write(fibonacci);
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (fibonacci[i] == arr[i]) {
+    //         compare = true;
+    //     } else {
+    //         compare = false;
+    //     }
+    // }
+    //
+    // if (compare === false) {
+    //     document.write("no");
+    // } else {
+    //     document.write("ok ");
+    // }
+    // }
+
+</script>
