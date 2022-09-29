@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+    let arr = [];
+    for (let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for (let j = 0; j < 3; j++) {
+            arr[i][j] = +prompt("nhap mang thu " + i + "vi tri " + j);
+
+        }
+    }
+
+    function checkPrime(number) {
+
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    let count = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (checkPrime(arr[i][j]) === true) {
+                count++;
+            }
+        }
+    }
+    document.write("co  " + count);
+
+
+</script>
