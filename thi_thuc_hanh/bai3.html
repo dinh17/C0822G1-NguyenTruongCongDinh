@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">Quản lí sách </h1>
+<input type="text" id="id" placeholder="mã số sách"><br>
+<input type="text" id="tenSach" placeholder="tên sách "><br>
+<input type="tnumber" id="namSuatBan" placeholder="năm suất bản"><br>
+<input type="number" id="soQuyen" placeholder="số quyển "><br>
+<input type="text" id="tinhTrang" placeholder="tình trạng "><br>
+<form align="center">
+    <p id="display"></p>
+    <!--    <td><input type="button" value="mượn sách" onclick="muonSach(id)"></td>-->
+    <td><input type="button" value="thêm sách mới" onclick="addSach()"></td>
+    <td><input type="button" value="thêm sách đã có" onclick="addSach()"></td>
+    <td><input type="button" value="hiển thị sách nhiều nhất" onclick="kiemTraSachNhieuNhat ()"></td>
+
+
+</form>
+
+</body>
+</html>
+<script>
+    class Sach {
+        constructor(id, tenSach, namSuatBan, soQuyen, tinhTrang) {
+            this.id = id;
+            this.tenSach = tenSach;
+            this.namSuatBan = namSuatBan;
+            this.soQuyen = soQuyen;
+            this.tinhTrang = tinhTrang;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        settenSach(tenSach) {
+            this.tenSach = tenSach;
+        }
+
+        setnamSuatBan(namSuatBan) {
+            this.namSuatBan = namSuatBan;
+        }
+
+        setsoQuyen(soQuyen) {
+            this.soQuyen = soQuyen;
+        }
+
+        settinhTrang(tinhTrang) {
+            this.tinhTrang = tinhTrang;
+        }
+
+
+        getId() {
+            return this.id;
+        }
+
+        gettenSach() {
+            return this.tenSach;
+        }
+
+        getnamSuatBan() {
+            return this.namSuatBan;
+        }
+
+        getsoQuyen() {
+            return this.soQuyen;
+        }
+
+        gettinhTrang(tinhTrang) {
+            return this.tinhTrang
+        }
+    }
+
+    let sachList = [];
+    let sach1 = new Sach(12345, "Toan", 2000, 0, true);
+    let sach2 = new Sach(23456, "Van", 1998, 4, true);
+    let sach3 = new Sach(37456, "TiengAnh", 1999, 5, false);
+    sachList.push(sach1, sach2, sach3);
+    display(sachList);
+
+    function muonSach(id) {
+        let conf = confirm("bạn có muốn xoá sach: " + sachList[id].gettenSach() + "???");
+        if (conf && sachList[id].getsoQuyen() > 0) {
+            sachList.splice(id, 1);
+        }
+        display(sachList);
+    }
+
+    function addSach() {
+        let id = document.getElementById("id").value;
+        if (id > 59999) {
+            alert("mã số sách phải gồm 5 ký tụ kí tự đầu từ 1-5 4 ký tự sau từ 1-9");
+        }
+
+        let tenSach = document.getElementById("tenSach").value;
+        let namSuatBan = document.getElementById("namSuatBan").value;
+
+        if (namSuatBan > 9999) {
+            alert("nhập lại năm suẩt bán có 4 ký tự số ");
+        }
+
+        let soQuyen = document.getElementById("soQuyen").value;
+        if (soQuyen < 0) {
+            alert("nhập lại tình trạng quyển phải lớn hơn 0");
+        }
+        let tinhTrang = document.getElementById("tinhTrang").value;
+        let sach = new Sach(id, tenSach, namSuatBan, soQuyen, tinhTrang);
+        if (namSuatBan < 10000 && soQuyen > 0 && id <= 59999) {
+            // if(sachList[id].gettenSach()===tenSach && sachList[id].getnamSuatBan()===namSuatBan){
+            //      sachList[id].getsoQuyen() =soQuyen;
+            // }else{
+            sachList.push(sach);
+            // }
+
+        }
+
+        document.getElementById("id").value = "";
+        document.getElementById("tenSach").value = "";
+        document.getElementById("namSuatBan").value = "";
+        document.getElementById("soQuyen").value = "";
+        document.getElementById("tinhTrang").value = "";
+        display(sachList);
+    }
+
+    function kiemTraSachNhieuNhat(id, lish) {
+        let max = 0;
+        for (let i = 0; i < list.length; i++) {
+            if (sachList[id].getsoQuyen(i) > max) {
+                max = sachList[id].getsoQuyen(i);
+            }
+        }
+        return alert("max");
+
+    }
+
+    function display(list) {
+        let data = '<table border = " 1 " style="border-collapse: collapse" align="center">\n' +
+            '    <tr>\n' +
+            '        <th>mã số sách</th>\n' +
+            '        <th>tên sách</th>\n' +
+            '        <th>năm suất bản</th>\n' +
+            '        <th>số quyển</th>\n' +
+            '        <th>tình trạng</th>\n' +
+
+            // '\n' +
+            // '\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            data += '<tr>\n' +
+                '        <td>' + list[i].getId() + '</td>\n' +
+                '        <td>' + list[i].gettenSach() + '</td>\n' +
+                '        <td>' + list[i].getnamSuatBan() + '</td>\n' +
+                '        <td>' + list[i].getsoQuyen() + '</td>\n' +
+                '        <td>' + list[i].gettinhTrang() + '</td>\n' +
+                '        <td><input type="button"  value="mượn sách" onclick="muonSach(' + i + ')"></td>\n' +
+                // '        <td><input type="button"  value="thêm sách mới" onclick="addSach()(' + i + ')"></td>\n' +
+                // '        <td><input type="button"  value="thêm sách đã có" onclick="addSach()(' + i + ')"></td>\n' +
+                // '        <td><input type="button"  value="hiển thị sách nhiều nhất" onclick="addSach()(' + i + ')"></td>\n' +
+
+
+                // '\n' +
+                //     '\n' +
+                '    </tr>'
+        }
+        data += '</table>';
+
+        document.getElementById("display").innerHTML = data;
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let n = +prompt("nhap do dai cua mang ");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhap phan tu thu " + (i + 1));
+    }
+    alert(arr);
+    let check =false ;
+    for (let i = 0; i <parseInt(arr.length/2) ; i++) {
+        for (let j =arr.length-1; j >= parseInt(arr.length/2); j--) {
+            if (arr[i]===arr[j]){
+                check=true ;
+            }
+
+        }
+    }
+    if(check){
+        alert("OK");
+    }else{
+        alert("NO");
+    }
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="id"  placeholder="nhập id"><br>
+<input type="text" id="nameSinhVien" placeholder="nhập tên Sinh Vien "><br>
+<input type="email" id="email" placeholder="nhập email"><br>
+<input type="text" id="sodienthoai" placeholder="nhập so dien thoai " ><br>
+<button onclick="addSinhVien()">Add Studied</button>
+<p id="display"></p>
+</body>
+</html>
+<script>
+    class SinhVien {
+        constructor(id, nameSinhVien, email, sodienthoai) {
+            this.id = id;
+            this.nameSinhVien = nameSinhVien;
+            this.email = email;
+            this.sodienthoai = sodienthoai;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setNameSinhVien(nameSinhVien) {
+            this.nameSinhVien = nameSinhVien;
+        }
+
+        setemail(email) {
+            this.email = email;
+        }
+
+        setsodienthoai(sodienthoai) {
+            this.sodienthoai = sodienthoai;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getNameSinhVien() {
+            return this.nameSinhVien;
+        }
+
+        getemail() {
+            return this.email;
+        }
+
+        getsodienthoai() {
+            return this.sodienthoai;
+        }
+    }
+    let sinhVienList = [];
+    let sinhVien1 = new SinhVien(1, "Dinh", "dinhthong.email",   11231231);
+    let sinhVien2 = new SinhVien(2, "Dinhhh", "TienPhong.email", 1123123123);
+    let sinhVien3 = new SinhVien(3, "Dinhhh", "TienPhong.email", 10123123123);
+    sinhVienList.push(sinhVien1, sinhVien2, sinhVien3);
+    display(sinhVienList);
+    function deleteSinhVien(id) {
+        let conf = confirm("bạn có muốn xoá Sinh Vien  tên : "+ sinhVienList[id].getNameSinhVien() + "???");
+        if (conf) {
+            sinhVienList.splice(id, 1);
+        }
+        display(sinhVienList);
+    }
+    function addSinhVien(){
+        let id = document.getElementById("id").value;
+
+        let nameSinhVien = document.getElementById("nameSinhVien").value;
+        let email = document.getElementById("email").value;
+        let sodienthoai = document.getElementById("sodienthoai").value;
+        let sinhVien = new SinhVien (id,nameSinhVien,email,sodienthoai);
+        sinhVienList.push(sinhVien);
+        document.getElementById("id").value="";
+        document.getElementById("nameSinhVien").value="";
+        document.getElementById("email").value="";
+        document.getElementById("sodienthoai").value="";
+        display(sinhVienList);
+    }
+    function display(list) {
+        let data = '<table border = " 1 " style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>id</th>\n' +
+            '        <th>tensinhvien</th>\n' +
+            '        <th>email</th>\n' +
+            '        <th>sodienthoai</th>\n' +
+            '        <th>xoa</th>\n' +
+            // '\n' +
+            // '\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            data += '<tr>\n' +
+                '        <td>' + list[i].getId() + '</td>\n' +
+                '        <td>' + list[i].getNameSinhVien() + '</td>\n' +
+                '        <td>' + list[i].getemail() + '</td>\n' +
+                '        <td>' + list[i].getsodienthoai() + '</td>\n' +
+                '        <td><input type="button"  value="xoa" onclick="deleteSinhVien(' + i + ')"></td>\n' +
+
+
+                // '\n' +
+                //     '\n' +
+                '    </tr>'
+        }
+        data += '</table>';
+
+        document.getElementById("display").innerHTML = data;
+    }
+</script>

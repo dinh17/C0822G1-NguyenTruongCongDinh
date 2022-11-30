@@ -10,38 +10,34 @@
 </html>
 <script>
     do {
-        let goiMon = +prompt("nhap so de chon thuc uong" + "1 (cafe)" +
-            " 2 (cam vắt)" +
-            "3(nước ép cà rốt)" +
-            "4(nước ép cà chua)" +
-            "5(nước lọc)" +
-            "6(nước dừa)" +
-            "7(thoát gọi món)");
+
+        let goiMon = +prompt("MENU\n1. Cafe\n2. Cam vat\n3. Nuoc ep ca rot\n4. Nuoc em ca chua\n5. Nuoc dua\n6. " +
+            "Nuoc loc\n7. Thoat\n Vui long chon mon:");
         let soLuong;
         switch (goiMon) {
             case 1 :
-                soLuong = +prompt("cafe gia 15000 nhap so luong cafe ");
-                document.write("tong tien ban can thanh toan " + soLuong * 15000)
+                soLuong = +prompt("cafe gia 15000\n nhap so luong cafe ");
+                document.write("tong tien ban can thanh toan " + soLuong * 15000+"VND")
                 break;
             case 2 :
-                soLuong = +prompt("cam vat gia 10000 nhap so luong cam vat ");
-                document.write("tong tien ban can thanh toan " + soLuong * 10000)
+                soLuong = +prompt("cam vat gia 10000\n nhap so luong cam vat ");
+                document.write("tong tien ban can thanh toan " + soLuong * 10000+"VND")
                 break;
             case 3 :
-                soLuong = +prompt("carot gia 12000 nhap so luong  ca rot ");
-                document.write("tong tien ban can thanh toan " + soLuong * 12000);
+                soLuong = +prompt("carot gia 12000\n nhap so luong  ca rot ");
+                document.write("tong tien ban can thanh toan " + soLuong * 12000+"VND");
                 break;
             case 4 :
-                soLuong = +prompt("ca chua gia 5000 nhap so luong ca chua ");
-                document.write("tong tien ban can thanh toan " + soLuong * 5000);
+                soLuong = +prompt("ca chua gia 5000\n nhap so luong ca chua ");
+                document.write("tong tien ban can thanh toan " + soLuong * 5000+"VND");
                 break;
             case 5 :
-                soLuong = +prompt("nuoc loc gia 5000 nhap so luong loc ");
-                document.write("tong tien ban can thanh toan " + soLuong * 5000);
+                soLuong = +prompt("nuoc loc gia 5000\n nhap so luong loc ");
+                document.write("tong tien ban can thanh toan " + soLuong * 5000+"VND");
                 break;
             case 6  :
-                soLuong = +prompt("dua gia 10000 nhap so luong dua ban uong");
-                document.write("tong tien ban can thanh toan " + soLuong * 10000);
+                soLuong = +prompt("dua gia 10000\n nhap so luong dua ban uong");
+                document.write("tong tien ban can thanh toan "  + soLuong * 10000 +"VND");
                 break;
             case 7 :
                 break;

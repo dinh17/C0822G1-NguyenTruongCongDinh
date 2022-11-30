@@ -9,15 +9,22 @@
 </body>
 </html>
 <script>
-    let nhap = prompt("nhập chuỗi bất kỳ");
-    let mang = nhap.split("");
-    for (let i = 0; i < mang.length; i++) {
-        for (let j = i; j < mang.length; j++) {
-            if (mang[i] === mang[j + 1]) {
-                mang.splice(mang[j + 1], 1);
-                j--;
-            }
+    let arr  = prompt("nhập chuỗi bất kỳ");
+    // let mang = nhap.split("");
+    // for (let i = 0; i < mang.length; i++) {
+    //     for (let j = i; j < mang.length; j++) {
+    //         if (mang[i] === mang[j + 1]) {
+    //             mang.splice(mang[j + 1], 1);
+    //             j--;
+    //         }
+    //     }
+    // }
+    // alert("mảng có " + mang.length + " ký tự khác nhau");
+    let mang  = [];
+    for (let i = 0 ; i<arr.length;i++){
+        if(!mang.includes(arr.charAt(i))){
+            mang.push(arr.charAt(i));
         }
     }
-    alert("mảng có " + mang.length + " ký tự khác nhau");
+    document.write("So ki tu khac nhau trong chuoi la: "+mang.length);
 </script>

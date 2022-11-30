@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<table border = " 1 ">-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>tensinhvien</th>-->
+<!--        <th>lop</th>-->
+<!--        <th>xoa</th>-->
+
+
+<!--    </tr>-->
+<!--</table>-->
+<input type="text" id="id"  placeholder="nhập id"><br>
+<input type="text" id="nameAccount" placeholder="nhập tên tk "><br>
+<input type="text" id="nameBank" placeholder="nhập ten ngan hang"><br>
+<input type="text" id="money" placeholder="nhập so tien" ><br>
+<button onclick="addNewAccount()">Add New Account</button>
+<p id="display"></p>
+</body>
+</html>
+<script>
+    class Account {
+        constructor(id, nameAccount, nameBank, money) {
+            this.id = id;
+            this.nameAccount = nameAccount;
+            this.nameBank = nameBank;
+            this.money = money;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setNameAccount(nameAccount) {
+            this.nameAccount = nameAccount;
+        }
+
+        setNameBank(nameBank) {
+            this.nameBank = nameBank;
+        }
+
+        setMoney(money) {
+            this.money = money;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getNameAccount() {
+            return this.nameAccount;
+        }
+
+        getNameBank() {
+            return this.nameBank;
+        }
+
+        getMoney() {
+            return this.money;
+        }
+    }
+
+    let accountList = [];
+    let account1 = new Account(1, "Dinh", "TienPhong",   100000);
+    let account2 = new Account(2, "Dinhhh", "TienPhong", 100000);
+    let account3 = new Account(3, "Dinhhh", "TienPhong", 100000);
+    accountList.push(account1, account2, account3);
+    display(accountList)
+
+    function deleteaccount(id) {
+        let conf = confirm("bạn có muốn xoá tai khoang  tên : "+ accountList[id].getNameAccount() + "???");
+        if (conf) {
+            accountList.splice(id, 1);
+        }
+        display(accountList);
+    }
+    function addNewAccount(list){
+        let id = document.getElementById("id").value;
+
+        let nameAccount = document.getElementById("nameAccount").value;
+        let nameBank = document.getElementById("nameBank").value;
+        let money = document.getElementById("money").value;
+        let account = new Account (id,nameAccount,nameBank,money);
+
+        document.getElementById("id").value="";
+        document.getElementById("nameAccount").value="";
+        document.getElementById("nameBank").value="";
+        document.getElementById("money").value="";
+        display(accountList);
+    }
+    function display(list) {
+        let data = '<table border = " 1 " style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>id</th>\n' +
+            '        <th>stk</th>\n' +
+            '        <th>tnh</th>\n' +
+            '        <th>money</th>\n' +
+            '        <th>xoa</th>\n' +
+            // '\n' +
+            // '\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            data += '<tr>\n' +
+                '        <td>' + list[i].getId() + '</td>\n' +
+                '        <td>' + list[i].getNameAccount() + '</td>\n' +
+                '        <td>' + list[i].getNameBank() + '</td>\n' +
+                '        <td>' + list[i].getMoney() + '</td>\n' +
+                '        <td><input type="button"  value="xoa" onclick="deleteaccount(' + i + ')"></td>\n' +
+
+
+                // '\n' +
+                //     '\n' +
+                '    </tr>'
+        }
+        data += '</table>';
+
+        document.getElementById("display").innerHTML = data;
+    }
+
+</script>

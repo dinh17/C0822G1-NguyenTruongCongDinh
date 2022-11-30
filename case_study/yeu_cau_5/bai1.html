@@ -9,26 +9,33 @@
 </body>
 </html>
 <script>
-    function tongSoChan(m, n) {
-        let mang = [];
-        for (let i = 0; i < m; i++) {
-            mang[i] = [];
-            for (let j = 0; j < n; j++) {
-                mang[i][j] = +prompt("Nhập số vào cột " + i + " chuỗi " + j);
+    let row = +prompt("nhap so hang  cua mang ");
+    let column = +prompt("nhap so cot cua mang ");
+
+    function mangHaiChieu(r, c) {
+        let arr = [];
+        for (let i = 0; i < r; i++) {
+            arr[i] = [];
+            for (let j = 0; j < c; j++) {
+                arr[i][j] = +prompt("nhap mang thu " + i + "vi tri " + j);
             }
         }
+        return arr;
+    }
+
+    let arr = mangHaiChieu(row, column)
+
+    function tongSoChan(r, c) {
         let sum = 0;
-        for (let i = 0; i < mang.length; i++) {
-            for (let j = 0; j < mang[i].length; j++) {
-                if (mang[i][j] % 2 === 0) {
-                    sum += mang[i][j];
+        for (let i = 0; i < r; i++) {
+            for (let j = 0; j < c; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
                 }
             }
         }
-        document.write("tổng = " + sum);
+        return sum;
     }
 
-    let m = +prompt("Nhập cột");
-    let n = +prompt("Nhập hàng");
-    tongSoChan(m, n);
+    document.write("tổng = " + tongSoChan(row, column));
 </script>

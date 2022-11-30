@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 1.toLowerCase(): Đổi in thường
+    // 2.toUpperCase(): Đổi in hoa
+    // 3.trim(): Cắt các ký tự trắng 2 đầu chuỗi
+    // 4.length(): Lấy độ dài chuỗi
+    // 5.substring(): Lấy chuỗi con
+    // 6.charAt(index): Lấy ký tự tại vị trí
+    // 7.replaceAll(find, replace): Tìm kiếm và thay thế tất cả
+    // 8.Split(separator): Tách chuỗi thành mảng
+    // 9.equals(): So sánh bằng có phân biệt hoa/thường
+    // 10.equalsIgnoreCase(): So sánh không phân biệt hoa/thường
+    // 11.Contains(): Kiểm tra có chứa hay không
+    // 12.startsWith(): Kiểm tra có bắt đầu bởi hay không
+    // 13.endsWith(): Kiểm tra có kết thúc bởi hay không
+    // 14.matches(): So khớp với hay không?
+    //     15.indexOf(): Tìm vị trí xuất hiện đầu tiên của chuỗi con
+    // 16.lastIndexOf(): Tìm vị trí xuất hiện cuối cùng của chuỗi con
+
+
+    // anhchanhCHo bai1
+    let row = +prompt("nhap so hang  cua mang ");
+    let column = +prompt("nhap so cot cua mang ");
+    function mangHaiChieu(r, c) {
+        let arr = [];
+        for (let i = 0; i < r; i++) {
+            arr[i] = [];
+            for (let j = 0; j < c; j++) {
+                arr[i][j] = +prompt("nhap mang thu " + i + "vi tri " + j);
+            }
+        }
+        return arr;
+    }
+
+    let arr = mangHaiChieu(row, column)
+
+    function tongUoc(number) {
+        let tongUocNumber = 0;
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                tongUocNumber += i;
+            }
+        }
+        return tongUocNumber;
+    }
+
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < column; j++) {
+            arr[i][j] = tongUoc(arr[i][j]) ;
+
+        }
+
+    }
+    document.write("" + arr);
+    // bai2
+    // let row = +prompt("nhap so hang  cua mang ");
+    // let column = +prompt("nhap so cot cua mang ");
+    //
+    // function mangHaiChieu(r, c) {
+    //     let arr = [];
+    //     for (let i = 0; i < r; i++) {
+    //         arr[i] = [];
+    //         for (let j = 0; j < c; j++) {
+    //             arr[i][j] = +prompt("nhap mang thu " + i + "vi tri " + j);
+    //         }
+    //     }
+    //     return arr;
+    // }
+    //
+    // let arr = mangHaiChieu(row, column)
+    // document.write("" + arr);
+    // let tong = 0;
+    //
+    // for (let i = 0; i < row; i++) {
+    //     for (let j = 0; j < column; j++) {
+    //         if (i === j || i + j === 3) {
+    //             tong += arr[i][j];
+    //         }
+    //     }
+    //
+    // }
+    // document.write("tong cua 2 hang cheo la  " + tong);
+
+
+
+    //bai cua Nga
+    // function changeBinary(number) {
+    //     let dividend = number;
+    //     let remainderArr = [];
+    //     let i = 0 ;
+    //     do {
+    //         remainderArr[i] = dividend % 2;
+    //         dividend = parseInt(dividend / 2);
+    //         i++;
+    //     }
+    //     while (dividend !== 0);
+    //     return remainderArr.reverse().join("");
+    // }
+    // document.write(changeBinary(10));
+
+</script>

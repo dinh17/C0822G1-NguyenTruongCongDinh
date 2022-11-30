@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function checkSquare(n) {
+        let i = 1;
+        while (i <= n) {
+            if (i * i == n) {
+                return 1;
+            }
+            i++;
+        }
+    }
+
+    let array = [];
+    let count = 0;
+    let n = +prompt("nhap so phan tu trong mang");
+    for ( let  i = 0 ; i<n;i++){
+        array[i]= +prompt("nhap vao phan tu ("+n+" so) ");
+    }
+
+    document.write("Cac so chinh phuong trong mang: ");
+    for (let i = 0; i < array.length; ++i) {
+        let check = checkSquare(array[i]);
+        if (check == 1) {
+           document.write(array[i] + " ");
+            ++count;
+        }
+    }
+    document.write("So so chinh phuong trong mang: " + count);
+</script>

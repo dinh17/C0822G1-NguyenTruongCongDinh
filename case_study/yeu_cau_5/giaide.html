@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Ví dụ: [15,2,3,5,10,15,7,8,9,10].-->
+<!-- Hà Nội mùa thu -->
+1945 - 2017
+</body>
+</html>
+<script>
+    // bai1 Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50). Hiển thị ra màn
+    // hình danh sách các phần tử của mảng, hiện thị giá trị trung bình của các phần tử chia
+    // hết cho 5 ở vị trí chia hết cho 3 ( phần tử có index chia hết cho 3)
+    let n ;
+    do{
+         n = +prompt("nhap vao n ");
+    }while(n>50)
+    let arr = [];
+        for (let i = 0; i < n ; i++) {
+            arr[i]= +prompt("nhap vao phan tu thu "+(i+1));
+
+        }
+        document.write(arr);
+        let tong = 0 ;
+        let count=0 ;
+    for (let i = 0 ;i <arr.length;i+=3){
+        if(arr[i]%5===0){
+            tong +=arr[i]
+            count++;
+        }
+    }
+    let trungBinh = tong/count;
+    document.write(""+trungBinh);
+
+    // Câu 2: Viết hàm có tham số truyền vào là một chuỗi các ký tự.Hàm thực hiện tạo ra
+    // một cụm từ viết tắt
+    // - Nếu chuỗi có nhiều hơn hoặc bằng 2 từ trở lên thì hàm sẽ trả về 1 cụm từ viết tắt
+    // là lấy các ký tự đầu tiên của từng từ và đổi sang in hoa.
+    //     Ví dụ:   object     Oriented     programming => kết quả trả về :OOP
+    // - Nếu Chuỗi chỉ có duy nhất 1 từ thì kết quả trả về là 1 thông báo "Chuỗi chỉ có 1
+    // từ nên không cần viết tắc"
+    // -     Ví du:     ObjectOriented => chuỗi này chỉ được tính chỉ có 1 từ
+    // Lưu ý : Các từ được xác định bởi 1 hoặc nhiều cách;
+    // Thang điểm:
+    //     Khai báo được hàm có tham số truyền vào 5
+    // Hiển thị kết quả 3
+    // Dùng thuật toán lấy được cụm từ viết hoa 10
+    // function vietTat(str) {
+    //     let count = 0;
+    //     let arr = str.split(" ")
+    //     let ketQua = "";
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] !== "") {
+    //             ketQua += arr[i].substr(0, 1).toUpperCase();
+    //             count++;
+    //         }
+    //
+    //     }
+    //     if (count === 1) {
+    //         return "Chuỗi chỉ có 1 từ nên không cần viết tắc";
+    //     } else {
+    //         return ketQua;
+    //     }
+    // }
+    //     let str = prompt("nhap vao 1 chuoi ky tu ");
+    //    alert (vietTat (str));
+
+    // Câu 3: Viết hàm có tham số truyền vào là một mảng ,tìm các số fibonaci có trong
+    // mảng(số này đã làm bài tập ở jame). Hàm trả về 1 mảng số fibonaci được tìm thấy
+    // trong mảng ( Yêu cầu sắp xếp tăng dần).
+    // Gợi ý đây là dãy số fibonaci: 0,1,1,2,3,5,8,13,21,.....
+    // Ví dụ :
+    function checkFibonacci(number) {
+        let num1 = 0;
+        let num2 = 1;
+        let num3;
+        if (number === 0) {
+            return true;
+        }
+        while (num1 < number) {
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+            if (number === num3) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function mangFibonacci(arr) {
+        let arr1 = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (checkFibonacci(arr[i])) {
+                arr1.push(arr[i]);
+            }
+
+        }
+        for (let i = 0; i < arr1.length - 1; i++) {
+            for (let j = i + 1; j < arr1.length; j++) {
+
+                if (arr1[i] > arr1[j]) {
+                    let tam = arr1[i];
+                    arr1[i] = arr1[j];
+                    arr1[j] = tam;
+                }
+
+            }
+
+        }
+        return arr1;
+
+    }
+
+    let arr = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];
+    alert(mangFibonacci(arr))
+
+
+
+
+</script>

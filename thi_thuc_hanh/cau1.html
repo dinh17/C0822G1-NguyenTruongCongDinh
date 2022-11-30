@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let n;
+    do {
+        n = +prompt("nhap vao n ");
+    } while (n > 50)
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhap vao phan tu thu " + (i + 1));
+
+    }
+    document.write("" + arr);
+    let tong = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i += 2) {
+        if (arr[i] % 2 === 1) {
+            tong += arr[i];
+            count++;
+        }
+    }
+    let trungBinh = tong / count;
+    document.write("" + trungBinh);
+
+</script>
